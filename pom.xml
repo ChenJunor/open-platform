@@ -1,0 +1,306 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.chenj.weixin</groupId>
+  <artifactId>open-platform</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>open-platform</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <junit.version>4.12</junit.version>
+    <log4j2.version>2.4.1</log4j2.version>
+	<slf4j.version>1.7.5</slf4j.version>
+	
+    <spring.framework.version>3.1.2.RELEASE</spring.framework.version>
+    <spring.boot.version>1.2.7.RELEASE</spring.boot.version>
+  </properties>
+
+  <repositories>
+	<repository>
+		<id>spring-milestone</id>
+		<name>Spring Maven MILESTONE Repository</name>
+		<url>http://repo.springsource.org/libs-milestone</url>
+	</repository>
+  </repositories>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+       <groupId>org.apache.logging.log4j</groupId>
+       <artifactId>log4j-1.2-api</artifactId>
+       <version>${log4j2.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>org.apache.logging.log4j</groupId>
+       <artifactId>log4j-web</artifactId>
+       <version>${log4j2.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>org.apache.logging.log4j</groupId>
+       <artifactId>log4j-slf4j-impl</artifactId>
+       <version>${log4j2.version}</version>
+     </dependency>
+	 <dependency>
+	  <groupId>org.slf4j</groupId>
+	  <artifactId>slf4j-api</artifactId>
+	  <version>${slf4j.version}</version>
+	</dependency>
+	
+	<!-- spring aop -->
+      <dependency>
+          <groupId>org.aspectj</groupId>
+          <artifactId>aspectjrt</artifactId>
+          <version>1.6.11</version>
+      </dependency>
+      <dependency>
+          <groupId>org.aspectj</groupId>
+          <artifactId>aspectjweaver</artifactId>
+          <version>1.6.11</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>${spring.framework.version}</version>
+        <type>jar</type>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>${spring.framework.version}</version>
+        <type>jar</type>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aop</artifactId>
+        <version>${spring.framework.version}</version>
+        <type>jar</type>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+
+      <!-- Spring Security -->
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-core</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-web</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-config</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-acl</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-ldap</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>com.github.isrsal</groupId>
+        <artifactId>spring-mvc-logger</artifactId>
+        <version>0.2</version>
+      </dependency>
+      
+      <dependency>
+    	  <groupId>com.sun.jersey</groupId>
+		  <artifactId>jersey-core</artifactId>
+		  <version>1.9</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>com.thetransactioncompany</groupId>
+        <artifactId>cors-filter</artifactId>
+        <version>1.3.2</version>
+      </dependency>
+      
+      <dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>2.7.1</version>
+	  </dependency>
+	  
+      <dependency>
+	    <groupId>org.springframework.data</groupId>
+	    <artifactId>spring-data-jpa</artifactId>
+	    <version>1.2.0.RELEASE</version>
+	 </dependency>
+	<!-- spring end -->  
+	
+	<dependency>
+		<groupId>net.sf.json-lib</groupId>
+		<artifactId>json-lib</artifactId>
+		<version>2.4</version>
+		<classifier>jdk15</classifier>
+	</dependency>
+
+	<!-- mybatis 包 -->
+	<dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis</artifactId>
+		<version>3.2.8</version>
+	</dependency>
+
+	<!--mybatis spring 插件 -->
+	<dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis-spring</artifactId>
+		<version>1.2.2</version>
+	</dependency>
+	
+	<!-- mysql连接 -->
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.1.24</version>
+	</dependency>
+	
+	<!-- proxool -->  
+    <dependency>  
+        <groupId>com.cloudhopper.proxool</groupId>  
+        <artifactId>proxool</artifactId>
+        <version>0.9.1</version>
+    </dependency>  
+    <dependency>  
+        <groupId>com.cloudhopper.proxool</groupId>  
+        <artifactId>proxool-cglib</artifactId>
+        <version>0.9.1</version>
+    </dependency>
+    
+    <dependency>
+	    <groupId>commons-dbcp</groupId>
+	    <artifactId>commons-dbcp</artifactId>
+	    <version>1.4</version>
+	</dependency>
+    
+    <!-- 格式化对象，方便输出日志 -->  
+    <dependency>  
+        <groupId>com.alibaba</groupId>  
+        <artifactId>fastjson</artifactId>  
+        <version>1.1.41</version>  
+    </dependency>  
+    
+    <!-- 微信JAVA SDK -->
+	<dependency>
+	  <groupId>me.chanjar</groupId>
+	  <artifactId>weixin-java-mp</artifactId>
+	  <version>1.3.3</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.freemarker</groupId>
+		<artifactId>freemarker</artifactId>
+		<version>2.3.23</version>
+	</dependency>
+
+  </dependencies>    
+  
+  <!-- <build>
+      <finalName>open</finalName>
+      <plugins>
+        <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-war-plugin</artifactId>
+			<version>2.1.1</version>
+			<configuration>
+				<webResources>
+					<resource>
+						this is relative to the pom.xml directory
+						<directory>WebContent</directory>
+					</resource>
+				</webResources>
+			</configuration>
+		</plugin> 
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+        </plugin>
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${spring.boot.version}</version>
+        </plugin>
+        <plugin>
+	        <groupId>org.apache.tomcat.maven</groupId>
+	        <artifactId>tomcat7-maven-plugin</artifactId>
+	        <version>2.0</version>
+	        <configuration>
+	          <url>http://localhost:8080/manager/text</url>
+	          <server>open</server>
+	          <path>/${project.build.finalName}</path>
+	          <username>admin</username>
+        	  <password>admin</password>
+        	  <warSourceDirectory>WebContent</warSourceDirectory>
+	        </configuration>
+      </plugin>
+      </plugins>
+   </build> -->
+   <build>
+		<finalName>open-platform</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.3</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+								    <groupId>org.mortbay.jetty</groupId>
+								    <artifactId>jetty-runner</artifactId>
+								    <version>8.1.14.v20131031</version>
+								    <destFileName>jetty-runner.jar</destFileName>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+  
+</project>

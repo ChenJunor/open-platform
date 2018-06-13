@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+    
+<mapper namespace="com.chenj.weixin.open.platform.entity.Project">  
+        
+    <resultMap type="Project" id="resultListProject">
+        <id column="id" property="id" />  
+        <result column="name" property="name"/>
+        <result column="description" property="description" />
+        <result column="progress" property="progress" />
+        <result column="invest" property="invest" />
+        <result column="reward" property="reward" />
+        <result column="online" property="online" />
+        <result column="success" property="success" />
+        <result column="create_time" property="createTime" />
+        <result column="last_modify_time" property="lastModifyTime" />
+        <result column="last_modify_author" property="lastModifyAuthor" />
+    </resultMap>  
+      
+    <insert id="saveProject" parameterType="Project" useGeneratedKeys="true" keyProperty="id">  
+            insert into  
+            project(name,description,progress,invest,reward,online,success) 
+            values(#{name},#{description},#{progress},#{invest},#{reward},#{online},#{success})   
+    </insert> 
+    
+    <select id="qryOnlinePjt" resultMap="resultListProject">  
+        SELECT  
+        id,name,description,progress
+        FROM project
+        WHERE online = 1 
+    </select>
+    
+    <select id="qrySuccessPjt" resultMap="resultListProject">  
+        SELECT  
+        id,name,description,progress
+        FROM project
+        WHERE success = 1 
+    </select>
+    
+    <select id="qryPjt" resultType="Project" parameterType="String">  
+        SELECT  
+        id,name,description,progress,invest,reward,online,success
+        FROM project
+        WHERE id =  #{ID}
+    </select>
+    
+</mapper>  

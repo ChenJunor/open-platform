@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+    
+<mapper namespace="com.chenj.weixin.open.platform.entity.Role">  
+        
+    <resultMap type="Role" id="resultListRole">
+        <id column="id" property="id" />  
+        <result column="name" property="name"/>
+        <result column="description" property="description" />
+        <result column="create_time" property="createTime" />
+        <result column="last_modify_time" property="lastModifyTime" />
+        <result column="last_modify_author" property="lastModifyAuthor" />
+    </resultMap>  
+    
+    <update id="saveUserRole" parameterType="java.util.Map">
+        insert into user_role(user_id,role_id) values(#{userId},#{roleId})
+    </update>
+    
+    <delete id="delUserRole" parameterType="java.util.Map">
+        delete from user_role where user_id = #{userId} and role_id = #{roleId}
+    </delete>
+    
+    <select id="getRoles" resultMap="resultListRole" parameterType="String">  
+        SELECT
+        id,  
+        name,
+        description
+        FROM Role
+    </select>
+    
+    <select id="getRoleById" resultType="Role" parameterType="String">  
+        SELECT
+        id,
+        name,
+        description
+        FROM Role
+        where id = #{ID}
+    </select>
+    
+    <select id="hasPvl" resultType="Integer" parameterType="java.util.Map">
+        select count(1)
+        from user_role ur
+        join role_res rr
+        on ur.role_id = rr.role_id
+        join user u
+        on ur.user_id = u.id
+        where 
+        u.openid = #{openid}
+        and rr.res_id = #{resId}
+        and ur.enabled = 1 and rr.enabled = 1
+    </select>
+</mapper>  

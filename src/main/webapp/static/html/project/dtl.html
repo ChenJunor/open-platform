@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>项目</title>
+    <link rel="stylesheet" href="../../style/weui.min.css"/>
+    <script src="../../vendor/angular.min.js"></script>
+
+    <script src="../../js/common.js"></script>
+    <script src="../../js/pjt.crt.js"></script>
+</head>
+<body>
+    <div ng-app="pjtDtlApp" ng-controller="pjtDtlCtrl">
+        <div class="weui_cells_title">查看项目</div>
+        <input id="switch" type="checkbox" ng-model="all" style="display:none;">
+        <div class="weui_cells weui_cells_form">
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">名称</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" ng-model="project.name" placeholder="请输入名称" disabled="disabled">
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">描述</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" ng-model="project.description" placeholder="请输入描述" disabled="disabled">
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">进度</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" ng-model="project.progress" placeholder="请输入进度" disabled="disabled">
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">投资额</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" ng-model="project.invest" placeholder="请输入投资额(整数)" disabled="disabled">
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">营利额</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" ng-model="project.reward" placeholder="请输入营利额(整数)" disabled="disabled">
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">是否上线</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" ng-model="project.online" placeholder="是否为上线项目(0否1是)" disabled="disabled">
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">是否成功</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" ng-model="project.success" placeholder="是否为成功项目(0否1是)" disabled="disabled">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

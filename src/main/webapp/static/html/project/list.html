@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>服务厅</title>
+    <link rel="stylesheet" href="../../style/weui.min.css"/>
+    <script src="../../vendor/angular.min.js"></script>
+
+    <script src="../../js/common.js"></script>
+    <script src="../../js/pjt.list.js"></script>
+</head>
+<body>
+    <div class="weui_tab" ng-app="roleApp" ng-controller="roleCtrl">
+        <div class="weui_tab_bd">
+            <div class="weui_panel weui_panel_access">
+                <div class="weui_panel_bd">
+                    <ul ng-repeat="project in projects" class="weui_media_box weui_media_appmsg">
+                        <li>
+                            <div class="weui_media_bd">
+                                <h4 class="weui_media_title">{{project.name}}</h4>
+                                <p class="weui_media_desc">{{project.description}}</p>
+                                <h4 class="weui_media_title">进度：{{project.progress}}</h4>
+                                <a href="mdf.html?id={{project.id}}" class="weui_btn weui_btn_mini weui_btn_primary">修改项目</a>
+                                <a ng-click="disable()" class="weui_btn weui_btn_mini weui_btn_primary">删除项目</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

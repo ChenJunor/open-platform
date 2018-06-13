@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+    
+<mapper namespace="com.chenj.weixin.open.platform.entity.User">  
+        
+    <resultMap type="User" id="resultListUser">
+        <id column="id" property="id" />  
+        <result column="name" property="name"/>
+        <result column="password" property="password" />
+        <result column="emial" property="emial" />
+        <result column="cellphone" property="cellphone" />
+        <result column="level" property="level" />
+    </resultMap>  
+      
+    <insert id="save" parameterType="User" useGeneratedKeys="true" keyProperty="id">  
+            insert into  
+            user(name,cellphone,email,openid) values(#{name},#{cellphone},#{email},#{openid})   
+    </insert> 
+    
+    <select id="queryAll" resultMap="resultListUser">  
+        SELECT * FROM user
+    </select>  
+    
+    <select id="queryByOpenid" resultType="User" parameterType="String">  
+        SELECT  
+        *
+        FROM user
+        WHERE openid = #{openid}  
+    </select>
+    
+    <select id="queryByPhone" resultType="User" parameterType="String">  
+        SELECT  
+        *
+        FROM user
+        WHERE cellphone = #{phone}  
+    </select>
+</mapper>  

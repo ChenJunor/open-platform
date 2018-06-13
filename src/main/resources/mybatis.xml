@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-config.dtd">  
+<configuration>  
+    <typeAliases>  
+        <typeAlias alias="user" type="com.chenj.weixin.open.platform.entity.User"/>
+        <typeAlias alias="article" type="com.chenj.weixin.open.platform.entity.Article"/>
+        <typeAlias alias="role" type="com.chenj.weixin.open.platform.entity.Role"/>
+        <typeAlias alias="project" type="com.chenj.weixin.open.platform.entity.Project"/>
+    </typeAliases>  
+      
+    <!-- 指定映射文件 -->  
+    <mappers>  
+        <mapper resource="sqlmap/User.xml" />
+        <mapper resource="sqlmap/Article.xml" />    
+        <mapper resource="sqlmap/Role.xml" />    
+        <mapper resource="sqlmap/Project.xml" />    
+    </mappers>  
+</configuration>  

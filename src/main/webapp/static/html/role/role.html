@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>服务厅</title>
+    <link rel="stylesheet" href="../../style/weui.min.css"/>
+    <script src="../../vendor/angular.min.js"></script>
+
+    <script src="../../js/common.js"></script>
+    <script src="../../js/role.js"></script>
+</head>
+<body>
+    <div class="weui_tab" ng-app="roleApp" ng-controller="roleCtrl">
+        <div class="weui_tab_bd">
+            <div class="weui_panel weui_panel_access">
+                <div class="weui_panel_bd">
+                    <ul ng-repeat="role in roles" class="weui_media_box weui_media_appmsg">
+                        <li>
+                            <div class="weui_media_bd">
+                                <h4 class="weui_media_title">{{role.name}}</h4>
+                                <p class="weui_media_desc">{{role.description}}</p>
+                                <a href="manage.html?id={{role.id}}&type=add" class="weui_btn weui_btn_mini weui_btn_primary">添加成员</a>
+                                <a href="manage.html?id={{role.id}}&type=remove" class="weui_btn weui_btn_mini weui_btn_primary">移除成员</a>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

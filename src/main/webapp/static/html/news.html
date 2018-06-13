@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>最新公告</title>
+    <link rel="stylesheet" href="../style/weui.min.css"/>
+    <script src="../vendor/angular.min.js"></script>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/news.list.js"></script>
+</head>
+<body>
+    <div class="weui_panel weui_panel_access" ng-app="newsApp" ng-controller="newsCtrl">
+            <div class="weui_panel_hd">最新公告</div>
+            <div class="weui_panel_bd">
+                <a href="{{news.url}}" ng-repeat="news in newsList" class="weui_media_box weui_media_appmsg">
+                    <div class="weui_media_hd">
+                        <img class="weui_media_appmsg_thumb" src="{{news.thumbImage}}" alt="">
+                    </div>
+                    <div class="weui_media_bd">
+                        <h4 class="weui_media_title">{{news.title}}</h4>
+                        <p class="weui_media_desc">{{news.description}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+</body>
+</html>
